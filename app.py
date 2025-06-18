@@ -13,7 +13,7 @@ o no (**notckd**) usando un modelo de Árbol de Decisión previamente entrenado 
 st.markdown("""
 Ingrese los datos clínicos del paciente, seleccione el modelo deseado, y haga clic en *Predecir*para predecir si presenta enfermedad renal crónica (CKD).
 """)
-st.write("Esta aplicacion es con fines de entretamiento y no para fines de uso clinico.")
+st.write("Esta aplicacion es con fines de entrenamiento y no para fines de uso clinico.")
 
 # Selección de modelo
 model_option = st.selectbox("📦 Selecciona el modelo a usar:",
