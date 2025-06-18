@@ -5,6 +5,12 @@ import os
 
 st.set_page_config(page_title="Predicción CKD", layout="centered")
 st.title("🧠 Predicción de Enfermedad Renal Crónica (CKD)")
+# Párrafo descriptivo
+st.markdown("""
+Esta aplicación permite predecir si un paciente tiene **Enfermedad Renal Crónica (CKD)** 
+o no (**notckd**) usando un modelo de Árbol de Decisión previamente entrenado utilizando machine learning supervisado por clasificacion basado en el UCI Irvine Machine learning repository (https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease). 
+Ingrese los datos clínicos del paciente, seleccione el modelo deseado, y haga clic en *Predecir*.
+""")
 st.write("Ingrese los datos clínicos del paciente para predecir si presenta enfermedad renal crónica (CKD).")
 
 # Selección de modelo
