@@ -1,3 +1,8 @@
+import streamlit as st
+import pandas as pd
+import joblib
+import os
+
 # Imagen en la parte superior izquierda con texto al lado
 st.markdown("""
     <div style="display: flex; align-items: center;">
@@ -7,10 +12,6 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-import streamlit as st
-import pandas as pd
-import joblib
-import os
 
 st.set_page_config(page_title="Predicción CKD", layout="centered")
 st.title("🧠 Predicción de Enfermedad Renal Crónica (CKD)")
