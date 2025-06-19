@@ -119,8 +119,8 @@ st.markdown("""
         <p><b>Integrantes:</b><br>
         Silvia Flores Toledo<br>
        Sarina Ramos Zunigaz<br>
-       Jose C Jara Aguirre</p>
-      Vladimir Villoslada Terrones/p>
+       Jose C Jara Aguirre<br>
+      Vladimir Villoslada Terrones<br>
        Jose Luis Vargas</p>
     </div>
 """, unsafe_allow_html=True)
