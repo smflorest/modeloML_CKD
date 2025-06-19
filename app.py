@@ -13,7 +13,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.set_page_config(page_title="Predicción CKD", layout="centered")
-st.title("🧠 Predicción de Enfermedad Renal Crónica (CKD)")
+st.title("🧠 Modelo de Predicción de Enfermedad Renal Crónica (CKD)")
 # Párrafo descriptivo
 st.markdown("""
 Esta aplicación permite predecir si un paciente tiene **Enfermedad Renal Crónica (CKD)** 
