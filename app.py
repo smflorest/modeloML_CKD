@@ -112,3 +112,15 @@ if st.button("🔍 Predecir"):
 
     except Exception as e:
         st.error(f"Error al hacer la predicción: {e}")
+
+# Footer con nombres alineados a la derecha
+st.markdown("""
+    <div style='position: fixed; bottom: 10px; right: 20px; text-align: right; color: gray; font-size: 14px;'>
+        <p><b>Integrantes:</b><br>
+        Silvia Flores Toledo<br>
+       Sarina Ramos Zunigaz<br>
+       Jose C Jara Aguirre</p>
+      Vladimir Villoslada Terrones/p>
+       Jose Luis Vargas</p>
+    </div>
+""", unsafe_allow_html=True)
