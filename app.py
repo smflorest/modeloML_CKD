@@ -37,7 +37,7 @@ else:
 # Definir columnas, unidades y tipo de dato
 column_info = {
     'age': ("Edad", "años", "numérico"),
-    'bp': ("Presión arterial sistolica", "mm Hg", "entero"),
+    'bp': ("Presión arterial", "mm Hg", "entero"),
     'sg': ("Gravedad específica (sg)", "g/mL", "numérico"),
     'al': ("Proteínas en orina (albumina)", "categoría: 0–5", "entero"),
     'su': ("Azúcar en orina", "categoría: 0–5", "entero"),
