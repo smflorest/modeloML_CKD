@@ -6,7 +6,7 @@ import os
 # Imagen en la parte superior izquierda con texto al lado
 st.markdown("""
     <div style="display: flex; align-items: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Human_Kidney_Simplified_Illustration.svg/512px-Human_Kidney_Simplified_Illustration.svg.png" 
+        <img src="https://cancuncancerinstitute.com/wp-content/uploads/2023/02/Portada-datos-sobre-el-cancer-de-rinon.png" 
              alt="Riñón" width="80" style="margin-right: 20px;">
         <h1>Clasificador de Enfermedad Renal Crónica (CKD)</h1>
     </div>
