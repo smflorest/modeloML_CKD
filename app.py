@@ -19,9 +19,11 @@ st.markdown("""
 Esta aplicación permite predecir si un paciente tiene **Enfermedad Renal Crónica (CKD)** 
 o no (**notckd**) usando un modelo de inteligencia artificial utilizando machine learning supervisado por clasificacion: Árbol de Decisión con una exactitud del 0.97, y basado en el dataset de UCI Irvine Machine learning repository (https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease). 
 """)
+
 st.markdown("""
 Ingrese los datos clínicos del paciente, seleccione el modelo deseado, y haga clic en *Predecir*para predecir si presenta enfermedad renal crónica (CKD).
 """)
+
 st.write("NOTA: Esta aplicacion es con fines de entrenamiento y no con fines de uso clinico.")
 
 # Selección de modelo
