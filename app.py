@@ -7,7 +7,7 @@ import os
 st.markdown("""
     <div style="display: flex; align-items: center;">
         <img src="https://cancuncancerinstitute.com/wp-content/uploads/2023/02/Portada-datos-sobre-el-cancer-de-rinon.png" 
-             alt="Riñón" width="80" style="margin-right: 20px;">
+             alt="Riñón" width="160" style="margin-right: 40px;">
         <h1>Enfermedad Renal Crónica (CKD)</h1>
     </div>
 """, unsafe_allow_html=True)
