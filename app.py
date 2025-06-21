@@ -61,7 +61,7 @@ column_info = {
     'pcv': ("Volumen corpuscular", "%", "numérico"),
     'wbcc': ("Recuento de leucocitos", "células/µL", "numérico"),
     'rbcc': ("Recuento de eritrocitos", "millones/µL", "numérico"),
-
+}
 
 st.subheader("Ingrese los datos del paciente:")
 
