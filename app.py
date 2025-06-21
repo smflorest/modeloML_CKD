@@ -61,3 +61,16 @@ if st.button("Predecir clase"):
     
     # Mostrar resultado
     st.success(f"Predicción: **{prediction}**")
+
+# Footer con nombres alineados a la izquierda
+st.markdown("""
+    <div style='position: fixed; bottom: 10px; left: 20px; text-align: right; color: gray; font-size: 14px;'>
+        <p><b>Integrantes:</b><br>
+        Silvia Flores Toledo<br>
+        Sarina Ramos Zuniga<br>
+        Jose C Jara Aguirre<br>
+        Vladimir Villoslada Terrones<br>
+        Jose Luis Vargas</p>
+    </div>
+""", unsafe_allow_html=True)
+
