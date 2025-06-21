@@ -14,7 +14,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # URL directa al archivo .pkl en GitHub (usa el enlace RAW)
-MODEL_URL = "https://github.com/jesusalvarado2023/prueba_borrar/raw/refs/heads/main/decision_tree_model.pkl" 
+MODEL_URL = "https://github.com/smflorest/modeloML_CKD/blob/main/decision_tree_model.pkl" 
 
 def load_model():
     response = requests.get(MODEL_URL)
