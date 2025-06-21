@@ -27,7 +27,7 @@ def load_model():
 model = load_model()
 
 # Título
-st.title("Clasificador de Enfermedad Renal Crónica (CKD)")
+st.title("Modelo de Predicción de Enfermedad Renal Crónica (CKD)")
 
 # Campos requeridos por el modelo
 columnas = ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc']
