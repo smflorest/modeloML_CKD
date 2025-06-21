@@ -42,7 +42,7 @@ Ingrese los datos clínicos del paciente, seleccione el modelo deseado, y haga c
 st.write("NOTA: Esta aplicacion es con fines de entrenamiento y no con fines de uso clinico.")
 
 # Campos requeridos por el modelo
-columnas = ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc']
+columnas = ['age' ("Edad", "años", "numérico"), 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc']
 input_data = {}
 
 # Definir columnas, unidades y tipo de dato
