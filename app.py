@@ -4,6 +4,15 @@ import joblib
 import requests
 import io
 
+# Imagen en la parte superior izquierda con texto al lado
+st.markdown("""
+    <div style="display: flex; align-items: center;">
+        <img src="https://cancuncancerinstitute.com/wp-content/uploads/2023/02/Portada-datos-sobre-el-cancer-de-rinon.png" 
+             alt="Riñón" width="160" style="margin-right: 40px;">
+        <h1>Enfermedad Renal Crónica (CKD)</h1>
+    </div>
+""", unsafe_allow_html=True)
+
 # URL directa al archivo .pkl en GitHub (usa el enlace RAW)
 MODEL_URL = "https://github.com/jesusalvarado2023/prueba_borrar/raw/refs/heads/main/decision_tree_model.pkl" 
 
