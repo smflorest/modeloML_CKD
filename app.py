@@ -26,95 +26,43 @@ Ingrese los datos clínicos del paciente, seleccione el modelo deseado, y haga c
 
 st.write("NOTA: Esta aplicacion es con fines de entrenamiento y no con fines de uso clinico.")
 
-# Selección de modelo
-model_option = st.selectbox("📦 Selecciona el modelo a usar:",
-                            ("decision_tree_model.pkl", "best_decision_tree_model.pkl"))
-model_path = os.path.join(os.getcwd(), model_option)
-if os.path.exists(model_path):
-    model = joblib.load(model_path)
-else:
-    st.error(f"El modelo '{model_option}' no se encuentra en el directorio.")
-    st.stop()
+# URL directa al archivo .pkl en GitHub (usa el enlace RAW)
+MODEL_URL = "https://github.com/jesusalvarado2023/prueba_borrar/raw/refs/heads/main/decision_tree_model.pkl" 
 
-# Definir columnas, unidades y tipo de dato
-column_info = {
-    'age': ("Edad", "años", "numérico"),
-    'bp': ("Presión arterial", "mm Hg", "entero"),
-    'sg': ("Gravedad específica (sg)", "g/mL", "numérico"),
-    'al': ("Proteínas en orina (albumina)", "categoría: 0–5", "entero"),
-    'su': ("Azúcar en orina", "categoría: 0–5", "entero"),
-    'rbc': ("Glóbulos rojos", "normal / abnormal", "categórico"),
-    'pc': ("Células epiteliales", "normal / abnormal", "categórico"),
-    'pcc': ("Cilindros celulares", "present / notpresent", "categórico"),
-    'ba': ("Bacterias", "present / notpresent", "categórico"),
-    'bgr': ("Nivel de glucosa en sangre (bgr)", "mg/dL", "numérico"),
-    'bu': ("Urea en sangre", "mg/dL", "numérico"),
-    'sc': ("Creatinina sérica", "mg/dL", "numérico"),
-    'sod': ("Sodio sérico", "mEq/L", "numérico"),
-    'pot': ("Potasio sérico", "mEq/L", "numérico"),
-    'hemo': ("Hemoglobina", "g/dL", "numérico"),
-    'pcv': ("Volumen corpuscular", "%", "numérico"),
-    'wbcc': ("Recuento de leucocitos", "células/µL", "numérico"),
-    'rbcc': ("Recuento de eritrocitos", "millones/µL", "numérico"),
-    'htn': ("Hipertensión", "yes / no", "categórico"),
-    'dm': ("Diabetes", "yes / no", "categórico"),
-    'cad': ("Enfermedad cardíaca", "yes / no", "categórico"),
-    'appet': ("Apetito", "good / poor", "categórico"),
-    'pe': ("Presencia de edema", "yes / no", "categórico"),
-    'ane': ("Anemia", "yes / no", "categórico")
-}
+def load_model():
+    response = requests.get(MODEL_URL)
+    if response.status_code != 200:
+        raise ValueError("No se pudo descargar el modelo desde GitHub.")
+    model = joblib.load(io.BytesIO(response.content))
+    return model
 
-# Mapas de LabelEncoder
-label_maps = {
-    'rbc': {'normal': 1, 'abnormal': 0},
-    'pc': {'normal': 1, 'abnormal': 0},
-    'pcc': {'notpresent': 0, 'present': 1},
-    'ba': {'notpresent': 0, 'present': 1},
-    'htn': {'no': 0, 'yes': 1},
-    'dm': {'no': 0, 'yes': 1},
-    'cad': {'no': 0, 'yes': 1},
-    'appet': {'good': 1, 'poor': 0},
-    'pe': {'no': 0, 'yes': 1},
-    'ane': {'no': 0, 'yes': 1}
-}
+# Cargar modelo
+model = load_model()
 
-# Formulario de ingreso
-st.subheader("📝 Ingreso de datos clínicos")
+# Título
+st.title("Clasificador de Enfermedad Renal Crónica (CKD)")
 
+# Campos requeridos por el modelo
+columnas = ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc']
 input_data = {}
 
-for col, (label, unit, tipo) in column_info.items():
-    display_label = f"**{label}** ({unit}, {tipo})"
-    if col in label_maps:
-        input_data[col] = st.selectbox(display_label, list(label_maps[col].keys()))
-    elif tipo == "entero":
-        input_data[col] = st.number_input(display_label, step=1, format="%d")
-    else:
-        input_data[col] = st.number_input(display_label, step=0.1)
+st.subheader("Ingrese los datos del paciente:")
 
-# Botón de predicción
-if st.button("🔍 Predecir"):
-    try:
-        # Convertir datos categóricos a numéricos
-        processed_data = {}
-        for col in column_info:
-            if col in label_maps:
-                processed_data[col] = label_maps[col][input_data[col]]
-            else:
-                processed_data[col] = input_data[col]
+# Entradas de usuario
+for col in columnas:
+    input_data[col] = st.number_input(f"{col}", format="%.2f")
 
-        input_df = pd.DataFrame([processed_data])
-        prediction = model.predict(input_df)[0]
-        resultado = "✅ NO tiene CKD (notckd)" if prediction == 1 else "⚠️ Tiene CKD (ckd)"
-        st.success(f"Resultado de la predicción: {resultado}")
-
-        with st.expander("📋 Ver datos ingresados"):
-            display_df = pd.DataFrame([input_data])
-            st.dataframe(display_df)
-
-    except Exception as e:
-        st.error(f"Error al hacer la predicción: {e}")
-
+# Botón para predecir
+if st.button("Predecir clase"):
+    # Crear DataFrame
+    df_input = pd.DataFrame([input_data])
+    
+    # Realizar predicción
+    prediction = model.predict(df_input)[0]
+    
+    # Mostrar resultado
+    st.success(f"Predicción: **{prediction}**")
+    
 # Footer con nombres alineados a la izquierda
 st.markdown("""
     <div style='position: fixed; bottom: 10px; left: 20px; text-align: right; color: gray; font-size: 14px;'>
