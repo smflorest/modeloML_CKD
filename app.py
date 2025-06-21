@@ -14,7 +14,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # URL directa al archivo .pkl en GitHub (usa el enlace RAW)
-MODEL_URL = "https://https://github.com/jesusalvarado2023/prueba_borrar/raw/refs/heads/main/decision_tree_model.pkl" 
+MODEL_URL = "https://github.com/jesusalvarado2023/prueba_borrar/raw/refs/heads/main/decision_tree_model.pkl" 
 
 def load_model():
     response = requests.get(MODEL_URL)
@@ -44,24 +44,6 @@ st.write("NOTA: Esta aplicacion es con fines de entrenamiento y no con fines de 
 # Campos requeridos por el modelo
 columnas = ['age', 'bp', 'sg', 'al', 'su', 'bgr', 'bu', 'sc', 'sod', 'pot', 'hemo', 'pcv', 'wbcc', 'rbcc']
 input_data = {}
-
-# Definir columnas, unidades y tipo de dato
-column_info = {
-    'age': ("Edad", "años", "numérico"),
-    'bp': ("Presión arterial", "mm Hg", "entero"),
-    'sg': ("Gravedad específica (sg)", "g/mL", "numérico"),
-    'al': ("Proteínas en orina (albumina)", "categoría: 0–5", "entero"),
-    'su': ("Azucar en orina", "categoría: 0–5", "entero"),
-    'bgr': ("Nivel de glucosa en sangre (bgr)", "mg/dL", "numérico"),
-    'bu': ("Urea en sangre", "mg/dL", "numérico"),
-    'sc': ("Creatinina sérica", "mg/dL", "numérico"),
-    'sod': ("Sodio sérico", "mEq/L", "numérico"),
-    'pot': ("Potasio sérico", "mEq/L", "numérico"),
-    'hemo': ("Hemoglobina", "g/dL", "numérico"),
-    'pcv': ("Volumen corpuscular", "%", "numérico"),
-    'wbcc': ("Recuento de leucocitos", "células/µL", "numérico"),
-    'rbcc': ("Recuento de eritrocitos", "millones/µL", "numérico"),
-}
 
 st.subheader("Ingrese los datos del paciente:")
 
