@@ -71,7 +71,7 @@ st.markdown("""
         Jose C Jara Aguirre<br>
         Vladimir Villoslada Terrones<br>
         Jose Luis Vargass<br>
-        Profesor Jesus Alvarado</p>
+        Profesor Jesus Alvarado </p>
     </div>
 """, unsafe_allow_html=True)
 
