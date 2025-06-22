@@ -70,7 +70,8 @@ st.markdown("""
         Sarina Ramos Zuniga<br>
         Jose C Jara Aguirre<br>
         Vladimir Villoslada Terrones<br>
-        Jose Luis Vargas</p>
+        Jose Luis Vargass<br>
+        Prof. Jesus Alvarado</p>
     </div>
 """, unsafe_allow_html=True)
 
